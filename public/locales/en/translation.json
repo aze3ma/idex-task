@@ -1,0 +1,22 @@
+{
+  "sidebarMenu": {
+    "profileMenuItem": "Profile",
+    "helpMenuItem": "Help"
+  },
+  "general": {
+    "profilePageTitle": "Profile",
+    "helpPageTitle": "Contact Us",
+    "helpPageDescription": "Let us know how we can help",
+    "helpPageButton": "Send",
+    "profilePageNameLabel":"Full Name",
+    "profilePageEmailLabel":"Email",
+    "profileChangePassword": "Change Password",
+    "profileEditProfile": "Edit Profile",
+    "profileChangeLogout": "Logout",
+    "profileChangeCheckbox": "Logout on all devices",
+    "profileChangeLang": "Change Language",
+    "profileEnglishOption": "English",
+    "profileGermanOption": "German",
+    "profileLikes": "Recent Likes"
+  }
+}

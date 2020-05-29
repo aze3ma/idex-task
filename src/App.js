@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-function App() {
+import { Sidebar, Button, Icon } from 'semantic-ui-react'
+
+import IDEXSidebar from './components/Sidebar'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Routes from './routes'
+
+const App = () => {
+  const [visible, setSidebarVisibilty] = useState(true)
+
+  const handleVisibilty = () => {
+    setSidebarVisibilty(!visible)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Sidebar.Pushable>
+        <Header />
+        <IDEXSidebar visible={visible} />
+
+        <Sidebar.Pusher>
+          <Button className="sidebar-button" onClick={handleVisibilty} secondary>
+            <Icon name={!visible ? 'chevron right' : 'chevron left'} />
+          </Button>
+
+          <Routes />
+        </Sidebar.Pusher>
+        <Footer />
+      </Sidebar.Pushable>
+    </Router>
+  )
 }
 
-export default App;
+export default App
